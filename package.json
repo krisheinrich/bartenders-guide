@@ -1,0 +1,27 @@
+{
+  "name": "bartenders-guide",
+  "version": "1.0.0",
+  "description": "Cocktail drink recipe app built with Next.js (React/Webpack/SSR) and the CocktailDB API.",
+  "main": "index.js",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/krisheinrich/bartenders-guide.git"
+  },
+  "author": "Kris Heinrich",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/krisheinrich/bartenders-guide/issues"
+  },
+  "homepage": "https://github.com/krisheinrich/bartenders-guide#readme",
+  "dependencies": {
+    "next": "^8.1.0",
+    "react": "^16.8.6",
+    "react-dom": "^16.8.6"
+  }
+}

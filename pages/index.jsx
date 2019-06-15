@@ -1,10 +1,9 @@
-import NavBar from '../components/navbar';
+import MainLayout from '../layouts/main';
 
 const Home = () => (
-  <div>
-    <NavBar />
+  <MainLayout>
     <h1>The Bartender's Guide</h1>
-  </div>
+  </MainLayout>
 );
 
 export default Home;

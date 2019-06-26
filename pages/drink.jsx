@@ -23,7 +23,7 @@ const Drink = (props) => (
         </div>
       </div>
       <div className="col-sm-5">
-        <img src={props.thumbUrl} class="img-fluid mw-100" alt={props.name}/>
+        <img src={props.thumbUrl} className="img-fluid mw-100" alt={props.name}/>
       </div>
     </div>
   </MainLayout>

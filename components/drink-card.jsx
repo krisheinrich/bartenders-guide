@@ -8,7 +8,9 @@ const DrinkCard = (props) => (
       <p className="card-text">{ props.preview }</p>
     </div>
     <div className="card-footer d-flex justify-content-center">
-      <Link href={`/drink?id=${props.id}`} className="btn btn-primary">Recipe</Link>
+      <Link href={`/drink?id=${props.id}`}>
+        <a className="btn btn-primary">View Recipe</a>
+      </Link>
     </div>
   </div>
 );

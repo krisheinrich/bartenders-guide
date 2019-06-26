@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import MainLayout from '../layouts/main';
 import * as apiHelper from '../helpers/api';
 import 'isomorphic-unfetch';
@@ -12,8 +13,14 @@ const Drink = (props) => (
         <div>
           <h5>Ingredients</h5>
           <ul>
-            { props.ingredients.map((entry, i) => (
-              <li key={i}>{ entry }</li>
+            { props.ingredients.map(([measure, name], i) => (
+              <li key={i}>
+                { measure }
+                { ` ` }
+                <Link href={`/ingredient?name=${name}`}>
+                  <a>{ name }</a>
+                </Link>
+              </li>
             )) }
           </ul>
         </div>

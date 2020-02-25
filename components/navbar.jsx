@@ -1,40 +1,23 @@
-import Router from 'next/router';
-import SearchIcon from './icons/search';
+import Link from 'next/link';
+import SearchBar from './searchbar';
 
-class NavBar extends React.Component {
-  state = {
-    searchQuery: ''
-  };
-
-  updateQuery = (e) => {
-    this.setState({ searchQuery: e.target.value });
-  };
-
-  handleSearch = () => {
-    const { searchQuery } = this.state;
-    if (searchQuery) {
-      Router.push(`/search?q=${searchQuery}`);
+const NavBar = () => (
+  <>
+  <nav className="navbar navbar-expand-md navbar-dark bg-dark">
+    <div className="container">
+      <Link href="/">
+        <a className="navbar-brand">BG</a>
+      </Link>
+      <SearchBar className="form-inline"/>
+    </div>
+  </nav>
+  <style jsx>{`
+    .navbar-brand {
+      font-family: 'Playball';
+      font-size: 24px;
     }
-  };
-
-  render() {
-    const { searchQuery } = this.state;
-    return (
-      <nav className="navbar navbar-expand-md navbar-dark bg-primary">
-        <div className="container">
-        <a className="navbar-brand" href="#">BG</a>
-          <form className="form-inline flex-nowrap" onSubmit={(e) => { e.preventDefault(); }}>
-            <input className="form-control" type="search" placeholder="Search"
-              value={searchQuery} onChange={this.updateQuery} aria-label="Search"/>
-            <button className="btn btn-outline-success" type="submit"
-              onClick={this.handleSearch}>
-              <SearchIcon width="16" height="16"/>
-            </button>
-          </form>
-        </div>
-      </nav>
-    );
-  }
-}
+  `}</style>
+  </>
+);
 
 export default NavBar;

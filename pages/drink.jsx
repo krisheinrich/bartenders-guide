@@ -5,32 +5,34 @@ import 'isomorphic-unfetch';
 
 const Drink = (props) => (
   <MainLayout>
-    <h1>{ props.name }</h1>
-    <div className="row">
-      <div className="col-sm-7">
-        <h4 className="text-muted">{ props.glass }</h4>
-        <h4>{ props.category }</h4>
-        <div>
-          <h5>Ingredients</h5>
-          <ul>
-            { props.ingredients.map(([measure, name], i) => (
-              <li key={i}>
-                { measure }
-                { ` ` }
-                <Link href={`/ingredient?name=${name}`}>
-                  <a>{ name }</a>
-                </Link>
-              </li>
-            )) }
-          </ul>
+    <div className="container">
+      <h1>{ props.name }</h1>
+      <div className="row">
+        <div className="col-sm-7">
+          <h4 className="text-muted">{ props.glass }</h4>
+          <h4>{ props.category }</h4>
+          <div>
+            <h5>Ingredients</h5>
+            <ul>
+              { props.ingredients.map(([measure, name], i) => (
+                <li key={i}>
+                  { measure }
+                  { ` ` }
+                  <Link href={`/ingredient?name=${name}`}>
+                    <a>{ name }</a>
+                  </Link>
+                </li>
+              )) }
+            </ul>
+          </div>
+          <div>
+            <h5>Instructions</h5>
+            <p>{ props.instructions }</p>
+          </div>
         </div>
-        <div>
-          <h5>Instructions</h5>
-          <p>{ props.instructions }</p>
+        <div className="col-sm-5">
+          <img src={props.thumbUrl} className="img-fluid mw-100" alt={props.name}/>
         </div>
-      </div>
-      <div className="col-sm-5">
-        <img src={props.thumbUrl} className="img-fluid mw-100" alt={props.name}/>
       </div>
     </div>
   </MainLayout>

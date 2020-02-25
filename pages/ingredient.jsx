@@ -3,11 +3,13 @@ import 'isomorphic-unfetch';
 
 const Ingredient = ({ name, type, description }) => (
   <MainLayout>
-    <h1>{ name }</h1>
-    { type && name !== type && <h4 className="text-muted">Type of { type }</h4> }
-    <div>
-      <h4>Description</h4>
-      <p>{ description }</p>
+    <div className="container">
+      <h1>{ name }</h1>
+      { type && name !== type && <h4 className="text-muted">Type of { type }</h4> }
+      <div>
+        <h4>Description</h4>
+        <p>{ description }</p>
+      </div>
     </div>
   </MainLayout>
 );

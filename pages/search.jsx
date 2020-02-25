@@ -34,9 +34,11 @@ const renderList = (results) => {
 
 const Search = (props) => (
   <MainLayout>
-    <h2>List for query '{ props.query }'</h2>
-    <h3>{ props.results.length } results</h3>
-    { renderList(props.results) }
+    <div className="container">
+      <h2>List for query '{ props.query }'</h2>
+      <h3>{ props.results.length } results</h3>
+      { renderList(props.results) }
+    </div>
   </MainLayout>
 );
 

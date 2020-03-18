@@ -7,11 +7,14 @@ const Drink = (props) => (
   <PageLayout>
     <div className="container">
       <h1>{ props.name }</h1>
-      <div className="row">
-        <div className="col-sm-7">
-          <h4 className="text-muted mt-1">{ props.glass }</h4>
+      <h4 className="text-muted mt-1">{ props.glass }</h4>
+      <div className="row mt-4">
+        <div className="col-md-5 order-md-2 d-flex align-items-center">
+          <img src={props.thumbUrl} className="img-fluid mw-100" alt={props.name}/>
+        </div>
+        <div className="col-md-7 order-md-1">
           <h4>{ props.category }</h4>
-          <div className="mt-5">
+          <div className="mt-4">
             <h5>Ingredients</h5>
             <ul>
               { props.ingredients.map(([measure, name], i) => (
@@ -29,9 +32,6 @@ const Drink = (props) => (
             <h5>Instructions</h5>
             <p>{ props.instructions }</p>
           </div>
-        </div>
-        <div className="col-sm-5">
-          <img src={props.thumbUrl} className="img-fluid mw-100" alt={props.name}/>
         </div>
       </div>
     </div>

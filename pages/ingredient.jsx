@@ -1,8 +1,8 @@
-import MainLayout from '../layouts/main';
+import PageLayout from '../layouts/page';
 import 'isomorphic-unfetch';
 
 const Ingredient = ({ name, type, description }) => (
-  <MainLayout>
+  <PageLayout>
     <div className="container">
       <h1>{ name }</h1>
       { type && name !== type && <h4 className="text-muted">Type of { type }</h4> }
@@ -11,7 +11,7 @@ const Ingredient = ({ name, type, description }) => (
         <p>{ description }</p>
       </div>
     </div>
-  </MainLayout>
+  </PageLayout>
 );
 
 

@@ -1,17 +1,17 @@
 import Link from 'next/link';
-import MainLayout from '../layouts/main';
+import PageLayout from '../layouts/page';
 import * as apiHelper from '../helpers/api';
 import 'isomorphic-unfetch';
 
 const Drink = (props) => (
-  <MainLayout>
+  <PageLayout>
     <div className="container">
       <h1>{ props.name }</h1>
       <div className="row">
         <div className="col-sm-7">
-          <h4 className="text-muted">{ props.glass }</h4>
+          <h4 className="text-muted mt-1">{ props.glass }</h4>
           <h4>{ props.category }</h4>
-          <div>
+          <div className="mt-5">
             <h5>Ingredients</h5>
             <ul>
               { props.ingredients.map(([measure, name], i) => (
@@ -25,7 +25,7 @@ const Drink = (props) => (
               )) }
             </ul>
           </div>
-          <div>
+          <div className="mt-5">
             <h5>Instructions</h5>
             <p>{ props.instructions }</p>
           </div>
@@ -35,7 +35,7 @@ const Drink = (props) => (
         </div>
       </div>
     </div>
-  </MainLayout>
+  </PageLayout>
 );
 
 Drink.getInitialProps = async (ctx) => {

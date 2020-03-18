@@ -1,4 +1,4 @@
-import MainLayout from '../layouts/main';
+import PageLayout from '../layouts/page';
 import DrinkCard from '../components/drink-card';
 import 'isomorphic-unfetch';
 
@@ -33,13 +33,13 @@ const renderList = (results) => {
 };
 
 const Search = (props) => (
-  <MainLayout>
+  <PageLayout>
     <div className="container">
       <h2>List for query '{ props.query }'</h2>
       <h3>{ props.results.length } results</h3>
       { renderList(props.results) }
     </div>
-  </MainLayout>
+  </PageLayout>
 );
 
 Search.getInitialProps = async (ctx) => {

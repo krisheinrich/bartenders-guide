@@ -1,1 +1,5 @@
 #__next { height: 100vh; }
+
+.form-control:focus {
+  box-shadow: none;
+}

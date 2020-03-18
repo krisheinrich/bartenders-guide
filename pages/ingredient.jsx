@@ -29,7 +29,7 @@ Ingredient.getInitialProps = async (ctx) => {
   const ingredient = json.ingredients[0];
   return {
     name: ingredient.strIngredient,
-    description: ingredient.strDescription || 'No information found.',
+    description: ingredient.strDescription || 'No information available.',
     type: ingredient.strType
   };
 };

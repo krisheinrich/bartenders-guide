@@ -92,7 +92,7 @@ Ingredient.getInitialProps = async (ctx) => {
       name: ingredient.strIngredient,
       description: ingredient.strDescription,
       type: ingredient.strType,
-      imgUrl: `https://www.thecocktaildb.com/images/ingredients/${ingredientName}.png`
+      imgUrl: apiHelper.getIngredientImageUrl(ingredientName)
     };
 
     if (drinksData && drinksData.drinks.length > 0) {

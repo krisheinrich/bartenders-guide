@@ -15,3 +15,5 @@ export const getDrinkData = async drinkId => await fetchJsonSafe(`lookup.php?i=$
 export const getIngredientData = async ingredientName => await fetchJsonSafe(`search.php?i=${ingredientName}`);
 
 export const getIngredientDrinks = async ingredientName => await fetchJsonSafe(`filter.php?i=${ingredientName}`);
+
+export const getIngredientImageUrl = ingredientName => `https://www.thecocktaildb.com/images/ingredients/${ingredientName}.png`;

@@ -27,7 +27,7 @@ const Ingredient = ({ name, type, description, imgUrl, drinkList }) => {
                 <div key={drink.id} className="drink-thumb col-sm-4 col-md-3 col-lg-2 mb-2">
                   <Link href={`/drink?id=${drink.id}`}>
                     <div className="position-relative">
-                      <img className="mw-100" src={drink.imgUrl} alt={name}/>
+                      <img className="mw-100 rounded" src={drink.imgUrl} alt={name}/>
                       <div className="name-overlay">
                         { drink.name }
                       </div>

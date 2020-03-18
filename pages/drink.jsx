@@ -30,7 +30,7 @@ const Drink = (props) => (
           </div>
           <div className="mt-5">
             <h5>Instructions</h5>
-            <p>{ props.instructions }</p>
+            <p className="pr-3 pl-3">{ props.instructions }</p>
           </div>
         </div>
       </div>

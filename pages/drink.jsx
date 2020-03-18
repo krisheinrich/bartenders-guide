@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import PageLayout from '../layouts/page';
 import * as apiHelper from '../helpers/api';
+import * as drinkHelper from '../helpers/drink';
 import 'isomorphic-unfetch';
 
 const Drink = (props) => (
@@ -52,7 +53,7 @@ Drink.getInitialProps = async (ctx) => {
     category: drink.strCategroy,
     glass: drink.strGlass,
     thumbUrl: drink.strDrinkThumb,
-    ingredients: apiHelper.assembleIngredientList(drink),
+    ingredients: drinkHelper.assembleIngredientList(drink),
     instructions: drink.strInstructions
   };
 };

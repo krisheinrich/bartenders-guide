@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import PageLayout from '../layouts/page';
+import * as apiHelper from '../helpers/api';
 import 'isomorphic-unfetch';
 
 const Ingredient = ({ name, type, description, imgUrl, drinkList }) => {
@@ -76,8 +77,8 @@ Ingredient.getInitialProps = async (ctx) => {
 
   try {
     const [ingredientData, drinksData] = await Promise.all([
-      fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?i=${ingredientName}`).then(res => res.json()).catch(e => console.error(e)),
-      fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${ingredientName}`).then(res => res.json()).catch(e => console.error(e))
+      apiHelper.getIngredientData(ingredientName),
+      apiHelper.getIngredientDrinks(ingredientName)
     ]);
 
     if (ingredientData.ingredients == null) {

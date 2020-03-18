@@ -41,13 +41,12 @@ const Drink = (props) => (
 
 Drink.getInitialProps = async (ctx) => {
   const { id: drinkId } = ctx.query;
-  const res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/lookup.php?i=${drinkId}`);
-  const json = await res.json();
-  if (json.drinks == null) {
+  const data = await apiHelper.getDrinkData(drinkId);
+  if (data.drinks == null) {
     return {};
   }
 
-  const drink = json.drinks[0];
+  const drink = data.drinks[0];
   return {
     name: drink.strDrink,
     category: drink.strCategroy,

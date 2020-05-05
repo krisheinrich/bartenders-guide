@@ -2,23 +2,20 @@ import PageLayout from '../layouts/page';
 import DrinkCard from '../components/drink-card';
 import 'isomorphic-unfetch';
 
+const uniqBy = (arr, fn, set = new Set) => {
+  return arr.filter(el => (v => !set.has(v) && set.add(v))(typeof fn === "function" ? fn(el) : el[fn]));
+};
+
 const renderList = (results) => {
   let cards = results.map((result) => {
     // Prepare API data for DrinkCard props
     const {
       idDrink: id,
       strDrink: name,
-      strDrinkThumb: thumbUrl,
-      strIngredient1,
-      strIngredient2
+      strDrinkThumb: thumbUrl
     } = result;
 
-    let preview = strIngredient1;
-    if (strIngredient2) {
-      preview += `, ${strIngredient2}...`;
-    }
-
-    const cardProps = { id, name, thumbUrl, preview };
+    const cardProps = { id, name, thumbUrl };
 
     return (
       <DrinkCard key={id} {...cardProps} />
@@ -44,9 +41,19 @@ const Search = (props) => (
 
 Search.getInitialProps = async (ctx) => {
   const query = ctx.query.q;
-  const res = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${query}`);
-  const json = await res.json();
-  return { query, results: json.drinks || [] };
+  const resDrinksByName = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/search.php?s=${query}`);
+  const jsonDrinksByName = await resDrinksByName.json();
+  const drinks = jsonDrinksByName.drinks || [];
+  const resDrinksByIngredient = await fetch(`https://www.thecocktaildb.com/api/json/v1/1/filter.php?i=${query}`);
+  const drinksByIngredient = await resDrinksByIngredient.text();
+  if (drinksByIngredient) {
+    const moreDrinks = JSON.parse(drinksByIngredient);
+    if (moreDrinks && moreDrinks.drinks) {
+      drinks.push(...moreDrinks.drinks)
+    }
+  }
+
+  return { query, results: uniqBy(drinks, 'idDrink') };
 };
 
 export default Search;

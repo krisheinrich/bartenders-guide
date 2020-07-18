@@ -24,7 +24,7 @@ const Home = () => (
         margin-bottom: 100px;
       }
       h1 {
-        font-family: 'Playball';
+        font-family: 'Playball', cursive;
         font-size: 92px;
         text-align: center;
         color: #eee;

@@ -13,7 +13,7 @@ const NavBar = () => (
   </nav>
   <style jsx>{`
     .navbar-brand {
-      font-family: 'Playball';
+      font-family: 'Playball', cursive;
       font-size: 24px;
     }
   `}</style>

@@ -1,8 +1,9 @@
 import Link from 'next/link';
+import LazyImage from './lazy-image';
 
 const DrinkCard = (props) => (
   <div className="card mb-4" style={{ flex: '0 0 200px' }}>
-    <img className="card-img-top" src={props.thumbUrl} alt={props.name}/>
+    <LazyImage src={props.thumbUrl} alt={props.name} />
     <div className="card-body">
       <h5 className="card-title text-center">{ props.name }</h5>
     </div>

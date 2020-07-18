@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import PageLayout from '../layouts/page';
+import LazyImage from '../components/lazy-image';
 import * as apiHelper from '../helpers/api';
 import * as drinkHelper from '../helpers/drink';
 import 'isomorphic-unfetch';
@@ -11,7 +12,11 @@ const Drink = (props) => (
       <h4 className="text-muted mt-1">{ props.glass }</h4>
       <div className="row mt-4">
         <div className="col-md-5 order-md-2 d-flex align-items-center">
-          <img src={props.thumbUrl} className="img-fluid mw-100" alt={props.name}/>
+          <LazyImage className="img-fluid mw-100 m-2"
+            src={props.thumbUrl}
+            alt={props.name}
+            withPlaceholder={false}
+          />
         </div>
         <div className="col-md-7 order-md-1">
           <h4>{ props.category }</h4>

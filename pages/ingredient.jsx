@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import PageLayout from '../layouts/page';
+import LazyImage from '../components/lazy-image';
 import * as apiHelper from '../helpers/api';
 import 'isomorphic-unfetch';
 
@@ -11,7 +12,7 @@ const Ingredient = ({ name, type, description, imgUrl, drinkList }) => {
         { type && name !== type && <h4 className="text-muted">Type of { type }</h4> }
         <div className="row mt-3 mb-5">
           <div className="col-lg-4 d-flex align-items-center">
-          <img className="mw-100" src={imgUrl} alt={name}/>
+          <LazyImage className="mw-100" src={imgUrl} alt={name} withPlaceholder={false}/>
           </div>
           <div className="col-lg-8 mt-4">
             <h4>Description</h4>

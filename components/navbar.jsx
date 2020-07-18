@@ -12,6 +12,9 @@ const NavBar = () => (
     </div>
   </nav>
   <style jsx>{`
+    .navbar {
+      flex: 0 0 auto;
+    }
     .navbar-brand {
       font-family: 'Playball', cursive;
       font-size: 24px;

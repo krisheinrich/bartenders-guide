@@ -55,17 +55,23 @@ const Ingredient = ({ name, type, description, imgUrl, drinkList }) => {
         .name-overlay {
           height: 100%;
           width: 100%;
-          background: rgba(0,0,0,0.6);
+          background: rgba(0,0,0,0.4);
           position: absolute;
           top: 0;
           text-align: center;
           align-items: center;
           justify-content: center;
           color: white;
-          display: none;
-        }
-        .drink-thumb:hover .name-overlay {
+          font-size: 1.25rem;
           display: flex;
+        }
+        @media screen and (min-width: 770px) {
+          .name-overlay {
+            display: none;
+          }
+          .drink-thumb:hover .name-overlay {
+            display: flex;
+          }
         }
       `}</style>
     </PageLayout>

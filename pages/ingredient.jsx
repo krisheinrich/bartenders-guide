@@ -62,8 +62,13 @@ const Ingredient = ({ name, type, description, imgUrl, drinkList }) => {
           align-items: center;
           justify-content: center;
           color: white;
-          font-size: 1.25rem;
+          font-size: 2rem;
           display: flex;
+        }
+        @media screen and (min-width: 576px) {
+          .name-overlay {
+            font-size: 1.25rem;
+          }
         }
         @media screen and (min-width: 770px) {
           .name-overlay {

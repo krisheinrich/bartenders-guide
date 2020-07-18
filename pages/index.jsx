@@ -32,7 +32,7 @@ const Home = () => (
         text-align: center;
         color: #eee;
         text-shadow: 2px 2px 4px #000;
-        margin: 0 10px;
+        margin: 0 20px;
       }
       @media screen and (min-width: 576px) {
         h1 {

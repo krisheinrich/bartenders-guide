@@ -9,7 +9,10 @@ const Home = () => (
         <h1>The Bartender's Guide</h1>
       </div>
       <div className="container">
-        <SearchBar className="col-lg-8 offset-lg-2 mt-5" placeholder="Discover new cocktails by name or ingredient"/>
+        <SearchBar
+          className="col-lg-8 offset-lg-2 my-4"
+          placeholder="Discover new cocktails by name or ingredient"
+        />
       </div>
     </div>
     <style jsx>{`
@@ -21,14 +24,25 @@ const Home = () => (
       }
       .hero-title {
         margin-top: 10vh;
-        margin-bottom: 100px;
+        margin-bottom: 56px;
       }
       h1 {
         font-family: 'Playball', cursive;
-        font-size: 92px;
+        font-size: 3.375rem;
         text-align: center;
         color: #eee;
         text-shadow: 2px 2px 4px #000;
+        margin: 0 10px;
+      }
+      @media screen and (min-width: 576px) {
+        h1 {
+          font-size: 3.75rem;
+        }
+      }
+      @media screen and (min-width: 768px) {
+        h1 {
+          font-size: 5.75rem;
+        }
       }
     `}</style>
   </MainLayout>

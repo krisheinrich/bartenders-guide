@@ -61,6 +61,7 @@ const Ingredient = ({ name, type, description, imgUrl, drinkList }) => {
           text-align: center;
           align-items: center;
           justify-content: center;
+          padding: 0 4px;
           color: white;
           font-size: 2rem;
           display: flex;

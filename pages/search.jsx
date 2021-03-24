@@ -23,8 +23,22 @@ const renderList = (results) => {
   });
 
   return (
-    <div className="card-deck d-flex">
+    <div className="results-list">
       { cards }
+      <style jsx>{`
+        .results-list {
+          margin-top: 2rem;
+          display: flex;
+          flex-direction: column;
+        }
+        @media screen and (min-width: 576px) {
+          .results-list {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            margin: 2rem -15px 0;
+          }
+        }
+      `}</style>
     </div>
   );
 };

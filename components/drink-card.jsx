@@ -18,6 +18,7 @@ const DrinkCard = (props) => (
       }
       @media screen and (min-width: 576px) {
         .card {
+          margin: 0 15px;
           flex: 0 0 200px;
         }
       }

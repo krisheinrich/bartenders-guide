@@ -1,7 +1,7 @@
 import Head from 'next/head';
 import NavBar from '../components/navbar';
 
-export default ({ children }) => (
+const Main = ({ children }) => (
   <>
     <Head>
       <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -24,3 +24,5 @@ export default ({ children }) => (
     `}</style>
   </>
 );
+
+export default Main;

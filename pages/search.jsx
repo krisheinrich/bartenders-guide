@@ -32,8 +32,13 @@ const renderList = (results) => {
 const Search = (props) => (
   <PageLayout>
     <div className="container">
-      <h2>List for query '{ props.query }'</h2>
-      <h3>{ props.results.length } results</h3>
+      { props.results.length
+        ? <h2>Found { props.results.length } results for '{ props.query }'</h2>
+        : <>
+            <h2>No results found for '{ props.query }'</h2>
+            <h5 className="font-italic">Try simplifying your search term or using another keyword</h5>
+          </>
+      }
       { renderList(props.results) }
     </div>
   </PageLayout>
